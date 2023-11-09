@@ -1,7 +1,7 @@
 import React from "react";
 import MainPages from "../components/MainPages";
 import { Box, Divider, Typography } from "@mui/material";
-import CrmTabs from "../components/crm/CrmTabs";
+import CrmMenu from "./CrmMenu";
 
 const CrmPage = () => {
   return (
@@ -10,7 +10,7 @@ const CrmPage = () => {
         CRM
       </Typography>
       <Divider />
-      <CrmTabs />
+      <CrmMenu />
     </MainPages>
   );
 };
