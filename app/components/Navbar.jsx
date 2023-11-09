@@ -53,7 +53,7 @@ const Navbar = () => {
         color: "black",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
@@ -131,28 +131,29 @@ const Navbar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
+              <Link
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  textTransform: "none",
-                  fontWeight: 600,
-                }}
+                href={`/${
+                  page.toLowerCase() !== "dashboard"
+                    ? page.toLowerCase()
+                    : "/"
+                }`}
+                style={{ textDecoration: "unset", color: "unset" }}
               >
-                <Link
-                  href={`/${
-                    page.toLowerCase() !== "dashboard"
-                      ? page.toLowerCase()
-                      : "/"
-                  }`}
-                  style={{ textDecoration: "unset", color: "unset" }}
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "block",
+                    textTransform: "none",
+                    fontWeight: 600,
+                  }}
                 >
-                  {page}
-                </Link>
-              </Button>
+                  
+                    {page}
+                </Button>
+              </Link>
             ))}
           </Box>
 

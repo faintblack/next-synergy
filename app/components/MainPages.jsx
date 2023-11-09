@@ -4,7 +4,7 @@ import { Box, Container } from "@mui/material";
 
 const MainPages = ({ children }) => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <Navbar />
       <Box sx={{
         mt: 9,
