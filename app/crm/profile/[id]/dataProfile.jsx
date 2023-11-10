@@ -120,7 +120,15 @@ const DataProfile = ({ params }) => {
   console.log('params nih', params);
 
   if (isLoading) {
-    return <div>Sedang memuat data</div>;
+    return (
+      <Box sx={{ height: 420, width: "100%" }}>
+        <Typography
+          variant="h4"
+        >
+          Loading...
+        </Typography>
+      </Box>
+    );
   }
 
   return (

@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -10,9 +10,7 @@ const columns = [
     headerName: "Name",
     width: 300,
     renderCell: (params) => (
-      <Link href={`/crm/profile/${params.row.id}`}>
-        {params.row.name}
-      </Link>
+      <Link href={`/crm/profile/${params.row.id}`}>{params.row.name}</Link>
     ),
   },
   { field: "gender", headerName: "Gender", width: 90 },
@@ -34,7 +32,7 @@ const getData = async () => {
 };
 
 const ClientTabs = () => {
-  const { data, isError } = useQuery({
+  const { data, isError, isLoading } = useQuery({
     queryKey: ["clientsQuery"],
     queryFn: getData,
     throwOnError: true,
@@ -44,6 +42,17 @@ const ClientTabs = () => {
   // useEffect(() => {
   //   throw new Error('tesaja');
   // }, [])
+  if (isLoading) {
+    return (
+      <Box sx={{ height: 420, width: "100%" }}>
+        <Typography
+          variant="h4"
+        >
+          Loading...
+        </Typography>
+      </Box>
+    );
+  }
 
   return (
     <Box sx={{ height: 420, width: "100%" }}>
