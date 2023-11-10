@@ -18,7 +18,7 @@ const columns = [
     field: "actions",
     type: "actions",
     renderCell: (params) => (
-      <Link href={`/profile/${params.row.id}`}>
+      <Link href={`/crm/profile/${params.row.id}`}>
         <Button className="bg-blue-500 capitalize hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
           Detail
         </Button>
