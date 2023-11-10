@@ -9,7 +9,7 @@ const MainPages = ({ children }) => {
       <Box sx={{
         mt: 9,
         pt: 2,
-        height: '5000px'
+        // height: '5000px'
       }}>
         {children}
       </Box>
