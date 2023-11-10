@@ -7,10 +7,8 @@ import MainPages from './components/MainPages'
 
 export default function Home() {
   return (
-    <MainPages>
-      <Typography variant="h4" gutterBottom>
-        Dashboard
-      </Typography>
-    </MainPages>
+    <Typography variant="h4" gutterBottom>
+      Dashboard
+    </Typography>
   )
 }

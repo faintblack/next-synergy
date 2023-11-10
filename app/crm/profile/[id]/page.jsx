@@ -9,11 +9,9 @@ import { Divider, Typography } from "@mui/material";
 
 const CrmProfileDetail = ({ params }) => {
   return (
-    <MainPages>
-      <ErrorBoundary fallback={<Error />}>
-        <DataProfile params={params} />
-      </ErrorBoundary>
-    </MainPages>
+    <ErrorBoundary fallback={<Error />}>
+      <DataProfile params={params} />
+    </ErrorBoundary>
   );
 };
 

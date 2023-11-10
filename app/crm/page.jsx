@@ -5,13 +5,13 @@ import CrmMenu from "./CrmMenu";
 
 const CrmPage = () => {
   return (
-    <MainPages>
+    <>
       <Typography variant="h4" gutterBottom>
         CRM
       </Typography>
       <Divider />
       <CrmMenu />
-    </MainPages>
+    </>
   );
 };
 
