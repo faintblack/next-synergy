@@ -17,9 +17,9 @@ import React from "react";
 
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import SettingsIcon from '@mui/icons-material/Settings';
-import SearchIcon from '@mui/icons-material/Search';
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import SettingsIcon from "@mui/icons-material/Settings";
+import SearchIcon from "@mui/icons-material/Search";
 
 import Link from "next/link";
 
@@ -71,7 +71,7 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            Mahardika
+            Dika
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -105,7 +105,17 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link
+                    key={page}
+                    href={`/${
+                      page.toLowerCase() !== "dashboard"
+                        ? page.toLowerCase()
+                        : "/"
+                    }`}
+                    style={{ textDecoration: "unset", color: "unset" }}
+                  >
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -127,16 +137,14 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            Mahardika
+            Dika
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Link
                 key={page}
                 href={`/${
-                  page.toLowerCase() !== "dashboard"
-                    ? page.toLowerCase()
-                    : "/"
+                  page.toLowerCase() !== "dashboard" ? page.toLowerCase() : "/"
                 }`}
                 style={{ textDecoration: "unset", color: "unset" }}
               >
@@ -150,15 +158,14 @@ const Navbar = () => {
                     fontWeight: 600,
                   }}
                 >
-                  
-                    {page}
+                  {page}
                 </Button>
               </Link>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton
+            {/* <IconButton
               size="medium"
               color="inherit"
             >
@@ -175,7 +182,7 @@ const Navbar = () => {
               color="inherit"
             >
               <NotificationsNoneIcon />
-            </IconButton>
+            </IconButton> */}
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Mahardika Kharisma" src="/panda-img.jpg" />
