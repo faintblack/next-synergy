@@ -9,22 +9,16 @@ const columns = [
     field: "name",
     headerName: "Name",
     width: 300,
+    renderCell: (params) => (
+      <Link href={`/crm/profile/${params.row.id}`}>
+        {params.row.name}
+      </Link>
+    ),
   },
   { field: "gender", headerName: "Gender", width: 90 },
   { field: "dob", headerName: "DOB", width: 150 },
   { field: "maritalStatus", headerName: "Marital Status", width: 200 },
   { field: "employmentStatus", headerName: "Employment", width: 200 },
-  {
-    field: "actions",
-    type: "actions",
-    renderCell: (params) => (
-      <Link href={`/crm/profile/${params.row.id}`}>
-        <Button className="bg-blue-500 capitalize hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-          Detail
-        </Button>
-      </Link>
-    ),
-  },
 ];
 
 const getData = async () => {
